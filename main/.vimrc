@@ -3,12 +3,16 @@ set nocompatible
 filetype off
 
 " Vundle plugin manager
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
 call vundle#end()
 filetype plugin indent on
+
+" Pathogen
+execute pathogen#infect()
 
 " 
 set laststatus=2
@@ -17,7 +21,6 @@ set laststatus=2
 colorscheme slate
 syntax on
 set number relativenumber
-execute pathogen#infect()
 
 " Key map
 nmap <F8> :TagbarToggle<CR>
