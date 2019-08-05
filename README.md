@@ -16,3 +16,5 @@ All tmux plugins are installed with [Tmux Plugin Manager](https://github.com/tmu
 ```bash
 $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
+
+Don't forget to `prefix` + <kbd>I</kbd> to install Tmux's plugins.
