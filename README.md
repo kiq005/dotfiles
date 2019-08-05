@@ -11,6 +11,15 @@ If you run on Linux or OS X, you probably can install them directly from your pa
 There is also:
 - Bash aliases
 
+## Scripts
+Some scripts are program specific, others are more general. Check it, and modify to your needs :smile:
+Here is the list of programs that you may use with these scripts:
+- [cmus](https://cmus.github.io/): A great CLI music player.
+- [mpv](https://mpv.io/): I like VLC, but I always use mpv with my scripts.
+- [calibre](https://calibre-ebook.com/): Until I find a better option, it's what I use for managing e-books. Use 'calibredb' to access the database.
+- [taskwarrior](https://taskwarrior.org/): The best task manager I found.
+- [jrnl](https://jrnl.sh/): A simple jornal application.
+
 ## What you will need:
 All tmux plugins are installed with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm). To install it:
 ```bash
