@@ -3,8 +3,10 @@ My dot files, to make life easier. The dotfiles were made for Arch Linux, but I'
 
 ## Files
 On main, you'll find configurations files for:
-- Vim
-- Tmux
+- [Vim](https://www.vim.org/)
+- [Tmux](https://github.com/tmux/tmux)
+
+If you run on Linux or OS X, you probably can install them directly from your package manager.
 
 There is also:
 - Bash aliases
