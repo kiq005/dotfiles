@@ -1,13 +1,27 @@
 alias weather="curl wttr.in/?format=3"
 
+has_pacman="$(command -v pacman)"
+has_apt="$(command -v apt)"
+has_brew="$(command -v brew)"
 # Pacman shortcut
 if [ $UID -ne 0 ]; then
-	alias install="sudo pacman -S"
-	alias remove="sudo pacman -R"
-	alias dremove="sudo pacman -Rs"
-	alias update="sudo pacman -Sy"
-	alias upgrade="sudo pacman -Syu"
-	alias query="sudo pacman -Qs"
+	if [ -n "$has_pacman" ]; then
+		alias install="sudo pacman -S"
+		alias remove="sudo pacman -R"
+		alias dremove="sudo pacman -Rs"
+		alias update="sudo pacman -Sy"
+		alias upgrade="sudo pacman -Syu"
+		alias query="sudo pacman -Qs"
+	fi
+	if [ -n "$has_apt" ]; then
+		alias update="sudo apt-get update"
+		alias upgrade="sudo apt-get upgrade"
+		alias clear-apt="sudo apt-get autoremove && apt-get autoclean"
+	fi
+	if [ -n "$has_brew" ]; then
+		alias update="brew upgrade"
+		alias upgrade="brew update"
+	fi
 fi
 
 # Downloading
@@ -23,7 +37,7 @@ alias mv="mv -v"
 alias cp="cp -v"
 
 # Color support
-alias ls="ls -G"
+alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
