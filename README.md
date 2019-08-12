@@ -28,3 +28,14 @@ $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 Don't forget to `prefix` + <kbd>I</kbd> to install Tmux's plugins.
+
+For vim plugins, I'm using vundle. Don't forget this commands:
+```bash
+vim -c VundleInstall -c quitall
+vim -c VundleUpdate -c quitall
+vim -c VundleClean -c quitall
+```
+**Be aware of the last command! It will erase plugins not installed listed in Vundle!**
+
+Also, to setup [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe), run `~/.vim/bundle/Youcompleteme/install.py`.
+
