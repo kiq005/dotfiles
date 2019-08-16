@@ -39,3 +39,4 @@ vim -c VundleClean -c quitall
 
 Also, to setup [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe), run `~/.vim/bundle/Youcompleteme/install.py`.
 
+Currently, the music related scripts works with cmus or spotify. Everything works fine with cmus, but you will need the [official spotify client](https://www.spotify.com/br/download/linux/) and [spotifycli](https://github.com/pwittchen/spotify-cli-linux) to get information and controll spotify.
