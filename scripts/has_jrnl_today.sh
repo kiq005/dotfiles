@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Tells if have journaled today
 # Last optimization reduce time from ~1,1s to 0,56s
 
