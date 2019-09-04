@@ -41,6 +41,14 @@ Also, to setup [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe), run `
 
 Currently, the music related scripts works with cmus or spotify. Everything works fine with cmus, but you will need the [official spotify client](https://www.spotify.com/br/download/linux/) and [spotifycli](https://github.com/pwittchen/spotify-cli-linux) to get information and controll spotify.
 
+## Tips
+### You can remove window boarders in xfce by creating an empty theme....
+```bash
+sudo mkdir -p /usr/share/themes/empty/xfwm4/
+sudo touch /usr/share/themes/empty/xfwm4/themerc
+```
+(From: https://www.reddit.com/r/unixporn/comments/7vmnim/xfce_minimal_no_border_xfce_desktop/)
+
 ## TODO:
 - [ ] Add Rofi dotfiles
 - [ ] Add Dunst dotfiles

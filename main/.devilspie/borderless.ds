@@ -1,0 +1,8 @@
+( if
+( is ( application_name ) "surf" )
+( begin
+( undecorate )
+( geometry "960x1053+0+27" )
+)
+)
+
