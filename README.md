@@ -24,6 +24,8 @@ Here is the list of programs that you may use with these scripts:
 ## Sub dependencies
 - cmake
 - ibus
+- neovim
+- python-neovim
 - `pip install --user powerline-shell`
 - `pip install --user thefuck`
 
