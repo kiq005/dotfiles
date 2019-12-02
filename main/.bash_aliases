@@ -57,6 +57,8 @@ alias ldir="ls -l | grep ^d"
 
 # Information
 alias now='date +"%T"'
+alias df='df -i'
+alias free='free -m'
 
 # Network
 alias fastping="ping -c 100 -s.2"
@@ -67,6 +69,7 @@ alias fastping="ping -c 100 -s.2"
 alias ..="cd .."
 alias ...="cd ../../"
 alias wgetc="wget -c"
+alias more=less
 
 # Programs
 alias vim="nvim"
