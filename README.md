@@ -35,6 +35,12 @@ vim -c VundleInstall -c quitall
 vim -c VundleUpdate -c quitall
 vim -c VundleClean -c quitall
 ```
+
+To install it, use:
+```bash
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+Then, from terminal, use `vim +PluginInstall +qall`.
 **Be aware of the last command! It will erase plugins not installed listed in Vundle!**
 
 Also, to setup [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe), run `~/.vim/bundle/Youcompleteme/install.py`.
