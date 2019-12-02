@@ -1,3 +1,5 @@
+# Custom and renamed commands
+
 alias weather="curl wttr.in/?format=3"
 
 has_pacman="$(command -v pacman)"
@@ -11,7 +13,11 @@ if [ $UID -ne 0 ]; then
 		alias dremove="sudo pacman -Rs"
 		alias update="sudo pacman -Sy"
 		alias upgrade="sudo pacman -Syu"
-		alias query="sudo pacman -Qs"
+		alias query="pacman -Qs"
+		alias find-pac="pacman -Qs"
+		alias arch-orphans="pacman -Qtdq"
+		alias arch-native="pacman -Qent"
+		alias arch-extern="pacman -Qm"
 	fi
 	if [ -n "$has_apt" ]; then
 		alias update="sudo apt-get update"
@@ -46,22 +52,24 @@ alias diff="diff --color=auto"
 # LS aliases
 alias ll="ls -alF"
 alias la="ls -A"
-alias l.="ls -A | egrep '^\.'"
 alias l="ls -CF"
 alias ldir="ls -l | grep ^d"
 
 # Information
-alias path="echo -e ${PATH//:/\\n}"
 alias now='date +"%T"'
 
 # Network
 alias fastping="ping -c 100 -s.2"
-alias ports="netstate -tulanp"
+[ -n "$(command -v netstate)" ] && alias ports="netstate -tulanp"
+[ -n "$(command -v ss)" ] && alias ports="ss -tulanp"
 
 # Cool
 alias ..="cd .."
 alias ...="cd ../../"
 alias wgetc="wget -c"
 
-
+# Programs
+alias vim="nvim"
+alias vi="nvim"
+alias oldvim="\\vim"
 
