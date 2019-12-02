@@ -65,6 +65,13 @@ sudo touch /usr/share/themes/empty/xfwm4/themerc
 ```
 (From: https://www.reddit.com/r/unixporn/comments/7vmnim/xfce_minimal_no_border_xfce_desktop/)
 
+### You can mute beep sounds by black listing PC Speaker
+```bash
+sudo rmmod pcspkr
+echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
+```
+(From: https://wiki.archlinux.org/index.php/PC_speaker#Disable_PC_Speaker)
+
 ## TODO:
 - [ ] Add Rofi dotfiles
 - [ ] Add Dunst dotfiles
