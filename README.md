@@ -21,10 +21,18 @@ Here is the list of programs that you may use with these scripts:
 - [jrnl](https://jrnl.sh/): A simple jornal application.
 - [ranger](https://github.com/ranger/ranger): A CLI file manager.
 
+## Sub dependencies
+- cmake
+- ibus
+- neovim
+- python-neovim
+- `pip install --user powerline-shell`
+- `pip install --user thefuck`
+
 ## What you will need:
 All tmux plugins are installed with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm). To install it:
 ```bash
-$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plvim +PluginInstall +qallugins/tpm
 ```
 
 Don't forget to `prefix` + <kbd>I</kbd> to install Tmux's plugins.
@@ -40,7 +48,9 @@ To install it, use:
 ```bash
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
+
 Then, from terminal, use `vim +PluginInstall +qall`.
+
 **Be aware of the last command! It will erase plugins not installed listed in Vundle!**
 
 Also, to setup [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe), run `~/.vim/bundle/Youcompleteme/install.py`.
@@ -54,6 +64,13 @@ sudo mkdir -p /usr/share/themes/empty/xfwm4/
 sudo touch /usr/share/themes/empty/xfwm4/themerc
 ```
 (From: https://www.reddit.com/r/unixporn/comments/7vmnim/xfce_minimal_no_border_xfce_desktop/)
+
+### You can mute beep sounds by black listing PC Speaker
+```bash
+sudo rmmod pcspkr
+echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
+```
+(From: https://wiki.archlinux.org/index.php/PC_speaker#Disable_PC_Speaker)
 
 ## TODO:
 - [ ] Add Rofi dotfiles
