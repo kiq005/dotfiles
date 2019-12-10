@@ -20,6 +20,7 @@ Here is the list of programs that you may use with these scripts:
 - [taskwarrior](https://taskwarrior.org/): The best task manager I found.
 - [jrnl](https://jrnl.sh/): A simple jornal application.
 - [ranger](https://github.com/ranger/ranger): A CLI file manager.
+- [dmenu](http://tools.suckless.org/dmenu/): A dynamic menu for X.
 
 ## Sub dependencies
 - cmake
@@ -74,4 +75,8 @@ echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 
 ## TODO:
 - [ ] Add Rofi dotfiles
-- [ ] Add Dunst dotfiles
+- [x] Add Dunst dotfiles
+
+# External
+## Scripts
+- [dmenufm](https://github.com/huijunchen9260/dmenufm)

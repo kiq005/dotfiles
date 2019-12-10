@@ -147,34 +147,46 @@ ex ()
 	fi
 }
 
-csource() {
-	[[ $1 ]] || { echo "Missing operand" >&2; return 1; }
-	[[ -r $1 ]] || { printf "File %s does not exist or is not readable\n" "$1" >&2; return 1; }
+_csource() {
 	local output_path=${TMPDIR:-/tmp}/${1##*/};
 	gcc "$1" -o "$output_path" && "$output_path";
-	rm "$output_path";
+	rm "$output_path" > /dev/null 2>&1;
 	return 0;
 }
 
-cppsource(){
-	[[ $1 ]] || { echo "Missing operand" >&2; return 1; }
-	[[ -r $1 ]] || { printf "File %s does not exist or is not readable\n" "$1" >&2; return 1; }
+_cppsource(){
 	local output_path=${TMPDIR:-/tmp}/${1##*/};
 	g++ "$1" -o "$output_path" && "$output_path";
-	rm "$output_path";
+	rm "$output_path" > /dev/null 2>&1;
 	return 0;
+}
+
+_nimsource(){
+    local output_path=${TMPDIR:-/tmp}/${1##*/};
+    nim c --verbosity:0 -o:"$output_path" -r "$1";
+	rm "$output_path" > /dev/null 2>&1;
+    return 0;
+}
+
+_rustsource(){
+    local output_path=${TMPDIR:-/tmp}/${1##*/};
+	rustc "$1" -o "$output_path" && "$output_path";
+	rm "$output_path" > /dev/null 2>&1;
+    return 0;
 }
 
 run(){
-	[[ $1 ]] || { echo "Missing operand" >&2; return 1; }
-	[[ -r $1 ]] || { printf "File %s does not exist or is not readable\n" "$1" >&2; return 1; }
-	case $1 in 
-		*.cpp) cppsource $1   ;;
-		*.c) csource $1       ;;
-		*.py) python $1       ;;
-		'PKGBUILD') makepkg -si ;;
-		*) echo "'$1' unknown source file type." ;;
-	esac
+    [[ $1 ]] || { echo "Missing operand" >&2; return 1; }
+    [[ -r $1 ]] || { printf "File %s does not exist or is not readable\n" "$1" >&2; return 1; }
+    case $1 in 
+        *.cpp) _cppsource $1    ;;
+        *.c) _csource $1        ;;
+        *.py) python $1         ;;
+        *.nim) _nimsource $1    ;;
+        *.rs) _rustsource $1    ;;
+        'PKGBUILD') makepkg -si ;;
+        *) echo "'$1' unknown source file type." ;;
+    esac
 }
 
 ###################
